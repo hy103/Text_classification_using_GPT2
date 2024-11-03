@@ -70,10 +70,12 @@ test_loader = DataLoader(test_dataset,
                           num_workers = num_workers,
                           drop_last = True)
 
-# small_data = next(iter(train_loader))
-# print(small_data.shape)
+small_data = next(iter(train_loader))
+print(small_data)
 
-for input_batch, label_batch in train_loader:
-    pass
-print(f"Input batch shape :{input_batch}")
-print(f"Label batch shape :{label_batch}")
+# for input_batch, label_batch in train_loader:
+#     pass
+# print(f"Input batch shape :{input_batch}")
+# print(f"Label batch shape :{label_batch}")
+
+
