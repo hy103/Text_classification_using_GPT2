@@ -4,16 +4,12 @@ import tiktoken
 from torch.utils.data import Dataset , DataLoader
 import pandas as pd
 
-
-
-
 class Spam_Dataset(Dataset):
     def __init__(self, csv_file, tokenizer, max_length = None, pad_token_id = 50256):
         super().__init__()
 
         self.df = pd.read_csv(csv_file)
         self.encoded_texts = [tokenizer.encode(text) for text in self.df["Text"]]
-        
 
         if max_length is None:
             self.max_length = self.Longest_encoded_length()
@@ -71,7 +67,7 @@ test_loader = DataLoader(test_dataset,
                           drop_last = True)
 
 small_data = next(iter(train_loader))
-print(small_data)
+
 
 # for input_batch, label_batch in train_loader:
 #     pass
